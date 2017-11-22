@@ -1,6 +1,6 @@
 {
-  "name": "aws-cognito-angular2-quickstart",
-  "author": "Vladimir Budilov",
+  "name": "fatbrands-data-loader",
+  "author": "Lawrence McDaniel",
   "version": "1.0.0",
   "angular-cli": {},
   "scripts": {
