@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export AWS_PROFILE=fatburger
 aws_cmd=${aws_cmd:-aws}
 
 # Bucket name must be all lowercase, and start/end with lowecase letter or number
