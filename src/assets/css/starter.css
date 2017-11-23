@@ -9,6 +9,7 @@
   top: 0;
   left: 0;
   margin-left: 5px !important;
+  padding: 5px 5px !important;
 }
 
 .nav>li {
@@ -81,6 +82,11 @@ h6 {
 }
 
 @media (max-width: 767px) {
+  .navbar-brand {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+  }
+
     .topnav img {
       height: 75px;
     }
