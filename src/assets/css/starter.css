@@ -11,6 +11,10 @@
   margin-left: 5px !important;
 }
 
+.nav>li {
+  text-align: right;
+}
+
 body,
 html {
     width: 100%;
@@ -33,6 +37,10 @@ h6 {
 
 .topnav {
     font-size: 14px;
+}
+
+.topnav img {
+  height: 150px;
 }
 
 .lead {
@@ -73,6 +81,14 @@ h6 {
 }
 
 @media (max-width: 767px) {
+    .topnav img {
+      height: 75px;
+    }
+
+    footer {
+      font-size: 10px;
+    }
+
     .intro-message {
         padding-bottom: 15%;
     }
