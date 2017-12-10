@@ -15,6 +15,7 @@
 
         <div class="collapse navbar-collapse" id="appNavbar">
           <ul class="nav navbar-nav navbar-right">
+            <li><a [routerLink]="['/securehome/file-manager']">File Manager</a></li>
             <li class="dropdown">
               <a [routerLink]="['/securehome/myprofile']" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ user.username }}<i class="fa fa-user fa-fw"></i>  <span class="caret"></span></a>
               <ul class="dropdown-menu">

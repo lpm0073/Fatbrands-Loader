@@ -11,6 +11,7 @@ import {ForgotPassword2Component, ForgotPasswordStep1Component} from "./public/a
 import {LogoutComponent, RegistrationConfirmationComponent} from "./public/auth/confirm/confirmRegistration.component";
 import {ResendCodeComponent} from "./public/auth/resend/resendCode.component";
 import {NewPasswordComponent} from "./public/auth/newpassword/newpassword.component";
+import { FileManagerComponent } from './secure/file-manager/file-manager.component';
 
 const homeRoutes: Routes = [
     {
@@ -44,6 +45,7 @@ const secureHomeRoutes: Routes = [
     },
     {
         path: 'securehome', component: SecureHomeComponent, children: [
+          {path: 'file-manager', component: FileManagerComponent},
         {path: 'logout', component: LogoutComponent},
         {path: 'jwttokens', component: JwtComponent},
         {path: 'myprofile', component: MyProfileComponent},
