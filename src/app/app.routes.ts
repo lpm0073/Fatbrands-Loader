@@ -1,6 +1,6 @@
 import {RouterModule, Routes} from "@angular/router";
 import {ModuleWithProviders} from "@angular/core";
-import {AboutComponent, HomeComponent, HomeLandingComponent} from "./public/home.component";
+import {HomeComponent, HomeLandingComponent} from "./public/home.component";
 import {SecureHomeComponent} from "./secure/landing/securehome.component";
 import {MyProfileComponent} from "./secure/profile/myprofile.component";
 import {JwtComponent} from "./secure/jwttokens/jwt.component";
@@ -23,7 +23,6 @@ const homeRoutes: Routes = [
         path: 'home',
         component: HomeComponent,
         children: [
-            {path: 'about', component: AboutComponent},
             {path: 'login', component: LoginComponent},
             {path: 'register', component: RegisterComponent},
             {path: 'confirmRegistration/:username', component: RegistrationConfirmationComponent},

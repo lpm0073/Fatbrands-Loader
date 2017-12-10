@@ -7,8 +7,8 @@ export const environment = {
     userPoolId: 'us-east-1_jjPFmgYHq',
     clientId: '3peakb2jh4kcbo70dk48cnc4su',
 
-    rekognitionBucket: 'rekognition-pics',
-    albumName: "usercontent",
+    s3BucketName: 'rekognition-pics',
+    folderName: "usercontent",
     bucketRegion: 'us-east-1',
 
     ddbTableName: 'LoginTraildataloader',
@@ -17,6 +17,5 @@ export const environment = {
     cognito_identity_endpoint: '',
     sts_endpoint: '',
     dynamodb_endpoint: '',
-    s3_endpoint: ''
+    s3_endpoint: 'https://s3.amazonaws.com/cognitoapp-dataloader-uploads/'
 };
-

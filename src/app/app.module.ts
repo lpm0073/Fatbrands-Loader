@@ -8,7 +8,7 @@ import {UserParametersService} from "./service/user-parameters.service";
 import {UserLoginService} from "./service/user-login.service";
 import {CognitoUtil} from "./service/cognito.service";
 import {routing} from "./app.routes";
-import {AboutComponent, HomeComponent, HomeLandingComponent} from "./public/home.component";
+import {HomeComponent, HomeLandingComponent} from "./public/home.component";
 import {AwsUtil} from "./service/aws.service";
 import {UseractivityComponent} from "./secure/useractivity/useractivity.component";
 import {MyProfileComponent} from "./secure/profile/myprofile.component";
@@ -21,8 +21,7 @@ import {ForgotPassword2Component, ForgotPasswordStep1Component} from "./public/a
 import {LogoutComponent, RegistrationConfirmationComponent} from "./public/auth/confirm/confirmRegistration.component";
 import {ResendCodeComponent} from "./public/auth/resend/resendCode.component";
 import {NewPasswordComponent} from "./public/auth/newpassword/newpassword.component";
-import { FileManagerComponent } from './secure/file-manager/file-manager.component';
-
+import {FileManagerComponent} from './secure/file-manager/file-manager.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +33,6 @@ import { FileManagerComponent } from './secure/file-manager/file-manager.compone
         ForgotPasswordStep1Component,
         ForgotPassword2Component,
         RegisterComponent,
-        AboutComponent,
         HomeLandingComponent,
         HomeComponent,
         UseractivityComponent,

@@ -14,7 +14,7 @@ export class S3Service {
 
     }
 
-    private getS3(): any {
+    public getS3(): any {
         AWS.config.update({
             region: environment.bucketRegion,
         });
@@ -22,7 +22,7 @@ export class S3Service {
         let clientParams:any = {
             region: environment.bucketRegion,
             apiVersion: '2006-03-01',
-            params: {Bucket: environment.rekognitionBucket}
+            params: {Bucket: environment.s3BucketName}
         };
         if (environment.s3_endpoint) {
             clientParams.endpoint = environment.s3_endpoint;
@@ -32,49 +32,46 @@ export class S3Service {
         return s3
     }
 
-    public addPhoto(selectedFile): boolean {
+    public uploadFile(selectedFile): boolean {
         if (!selectedFile) {
             console.log('Please choose a file to upload first.');
             return;
         }
         let fileName = selectedFile.name;
-        let albumPhotosKey = environment.albumName + '/' + this.cognitoUtil.getCognitoIdentity() + "/";
-        let photoKey = albumPhotosKey + fileName;
+        let folderFileKey = environment.folderName + '/' + this.cognitoUtil.getCognitoIdentity() + "/";
+        let FileKey = folderFileKey + fileName;
 
         this.getS3().upload({
-            Key: photoKey,
+            Key: FileKey,
             ContentType: selectedFile.type,
             Body: selectedFile,
             StorageClass: 'STANDARD',
             ACL: 'private'
         }, function (err, data) {
             if (err) {
-                console.log('There was an error uploading your photo: ', err);
+                console.log('There was an error uploading your file: ', err);
                 return false;
             }
-            console.log('Successfully uploaded photo.');
+            console.log('Successfully uploaded file.');
             return true;
         });
     }
 
-    public deletePhoto(albumName, photoKey) {
-        // this.getS3().deleteObjectStore("").promise().then(function () {
-        //
-        // }
-        this.getS3().deleteObject({Key: photoKey}, function (err, data) {
+    public deleteFile(folderName, FileKey) {
+        this.getS3().deleteObject({Key: FileKey}, function (err, data) {
             if (err) {
-                console.log('There was an error deleting your photo: ', err.message);
+                console.log('There was an error deleting your file: ', err.message);
                 return;
             }
-            console.log('Successfully deleted photo.');
+            console.log('Successfully deleted file.');
         });
     }
 
-    public viewAlbum(albumName) {
-        var albumPhotosKey = encodeURIComponent(environment.albumName) + '//';
-        this.getS3().listObjects({Prefix: albumPhotosKey}, function (err, data) {
+    public viewFolder(folderName) {
+        var folderFileKey = encodeURIComponent(environment.folderName) + '//';
+        this.getS3().listObjects({Prefix: folderFileKey}, function (err, data) {
             if (err) {
-                console.log('There was an error viewing your album: ' + err);
+                console.log('There was an error retrieving your folder: ' + err);
             }
 
         });

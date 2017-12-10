@@ -1,0 +1,18 @@
+<h1 class="page-header">File Manager</h1>
+<form class="" method="POST" action="#" role="form">
+    <div *ngIf="errorMessage!=null" class="alert alert-danger">
+        {{ errorMessage }}
+    </div>
+
+    <div class="input-group">
+        <label class="input-group-addon btn btn-info btn-block"><i class="glyphicon glyphicon-th-list"></i> Browse
+          <input id="files"
+            style="display: none;"
+            type="file"
+            (change)="onFileSelectButtonClick($event)">
+        </label>
+        <input id="fileName" required type="text" class="form-control" [(ngModel)]="fileName"
+               [ngModelOptions]="{standalone: true}">
+    </div>
+    <hr>
+</form>

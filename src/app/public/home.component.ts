@@ -3,13 +3,6 @@ import {Component, OnInit} from "@angular/core";
 declare let AWS: any;
 declare let AWSCognito: any;
 
-@Component({
-    selector: 'awscognito-angular2-app',
-    template: '<p>Hello and welcome!"</p>'
-})
-export class AboutComponent {
-
-}
 
 @Component({
     selector: 'awscognito-angular2-app',
@@ -35,5 +28,3 @@ export class HomeComponent implements OnInit {
 
     }
 }
-
-

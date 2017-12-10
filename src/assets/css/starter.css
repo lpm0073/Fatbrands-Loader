@@ -9,6 +9,10 @@
   margin: 75px 25px 0 250px;
 }
 
+#page-wrapper {
+  min-height: 750px;
+}
+
 .navbar-brand {
   position: absolute;
   top: 0;
