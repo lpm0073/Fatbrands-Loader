@@ -21,7 +21,6 @@ export class SecureHomeComponent implements OnInit, LoggedInCallback {
         console.log("SecureHomeComponent: constructor");
 
         this.user = cognitoUtil.getCurrentUser();
-        console.log('User: ', this.user);
     }
 
     ngOnInit() {
