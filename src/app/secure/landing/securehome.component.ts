@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
 import {UserLoginService} from "../../service/user-login.service";
 import {LoggedInCallback} from "../../service/cognito.service";
+import { CognitoUtil } from "../../service/cognito.service";
 
 @Component({
     selector: 'awscognito-angular2-app',
@@ -10,9 +11,17 @@ import {LoggedInCallback} from "../../service/cognito.service";
 })
 export class SecureHomeComponent implements OnInit, LoggedInCallback {
 
-    constructor(public router: Router, public userService: UserLoginService) {
+    user: any;
+
+    constructor(
+      public router: Router,
+      public userService: UserLoginService,
+      public cognitoUtil: CognitoUtil) {
         this.userService.isAuthenticated(this);
         console.log("SecureHomeComponent: constructor");
+
+        this.user = cognitoUtil.getCurrentUser();
+        console.log('User: ', this.user);
     }
 
     ngOnInit() {
@@ -25,4 +34,3 @@ export class SecureHomeComponent implements OnInit, LoggedInCallback {
         }
     }
 }
-

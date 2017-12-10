@@ -14,7 +14,11 @@ export class MyProfileComponent implements LoggedInCallback {
     public parameters: Array<Parameters> = [];
     public cognitoId: String;
 
-    constructor(public router: Router, public userService: UserLoginService, public userParams: UserParametersService, public cognitoUtil: CognitoUtil) {
+    constructor(
+      public router: Router,
+      public userService: UserLoginService,
+      public userParams: UserParametersService,
+      public cognitoUtil: CognitoUtil) {
         this.userService.isAuthenticated(this);
         console.log("In MyProfileComponent");
     }
@@ -35,7 +39,9 @@ export class Parameters {
 
 export class GetParametersCallback implements Callback {
 
-    constructor(public me: MyProfileComponent, public cognitoUtil: CognitoUtil) {
+    constructor(
+      public me: MyProfileComponent,
+      public cognitoUtil: CognitoUtil) {
 
     }
 

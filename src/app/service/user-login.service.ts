@@ -9,8 +9,11 @@ import * as STS from "aws-sdk/clients/sts";
 @Injectable()
 export class UserLoginService {
 
-    constructor(public ddb: DynamoDBService, public cognitoUtil: CognitoUtil) {
+    constructor(
+      public ddb: DynamoDBService,
+      public cognitoUtil: CognitoUtil) {
     }
+
 
     authenticate(username: string, password: string, callback: CognitoCallback) {
         console.log("UserLoginService: starting the authentication")
