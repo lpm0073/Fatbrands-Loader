@@ -17,5 +17,5 @@ export const environment = {
     cognito_identity_endpoint: '',
     sts_endpoint: '',
     dynamodb_endpoint: '',
-    s3_endpoint: 'https://s3.amazonaws.com/cognitoapp-dataloader-uploads/'
+    s3_endpoint: ''
 };

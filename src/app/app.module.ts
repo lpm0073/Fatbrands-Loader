@@ -22,6 +22,9 @@ import {LogoutComponent, RegistrationConfirmationComponent} from "./public/auth/
 import {ResendCodeComponent} from "./public/auth/resend/resendCode.component";
 import {NewPasswordComponent} from "./public/auth/newpassword/newpassword.component";
 import {FileManagerComponent} from './secure/file-manager/file-manager.component';
+import { S3Service } from "./service/s3.service";
+
+
 
 @NgModule({
     declarations: [
@@ -51,6 +54,7 @@ import {FileManagerComponent} from './secure/file-manager/file-manager.component
     providers: [
         CognitoUtil,
         AwsUtil,
+        S3Service,
         DynamoDBService,
         UserRegistrationService,
         UserLoginService,
