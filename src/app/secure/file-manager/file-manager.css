@@ -5,3 +5,32 @@
   padding-right: 25px;
 
 }
+
+.file-window {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.column-header {
+  color: gray;
+  border: .5px solid #E9e9e9;
+}
+
+.column-file {
+  text-align: left;
+}
+
+.column-attribute {
+  text-align: center;
+
+}
+
+th {
+  background-color: #333;
+  color: #f1f1f1
+}
+
+.input-group-addon {
+  color: #f1f1f1;
+}
