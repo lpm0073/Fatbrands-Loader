@@ -44,12 +44,13 @@ const secureHomeRoutes: Routes = [
     },
     {
         path: 'securehome', component: SecureHomeComponent, children: [
-          {path: 'file-manager', component: FileManagerComponent},
+        {path: 'file-manager', component: FileManagerComponent},
         {path: 'logout', component: LogoutComponent},
         {path: 'jwttokens', component: JwtComponent},
         {path: 'myprofile', component: MyProfileComponent},
         {path: 'useractivity', component: UseractivityComponent},
-        {path: '', component: MyProfileComponent}]
+        {path: '', component: FileManagerComponent}
+      ]
     }
 ];
 

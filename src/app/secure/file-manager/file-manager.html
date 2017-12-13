@@ -1,63 +1,86 @@
-<h1 class="page-header">File Manager</h1>
-
 <form class="" method="POST" action="#" role="form">
     <div *ngIf="errorMessage!=null" class="alert alert-danger">
         {{ errorMessage }}
     </div>
 
-    <div class="container-fluid">
-      <div class="row file-window">
-        <div class="col-sm-10">
-          <div class="input-group">
-              <label class="input-group-addon btn btn-primary btn-block"><i class="glyphicon glyphicon-th-list"></i> Browse
-                <input id="files"
-                  style="display: none; color: white;"
-                  type="file"
-                  (change)="onFileSelectButtonClick($event)">
-              </label>
-              <input id="fileName" required type="text" class="form-control" [(ngModel)]="fileName"
-                     [ngModelOptions]="{standalone: true}">
+
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#FileManager">File Manager</a></li>
+      <li><a data-toggle="tab" href="#FileViewer">File Contents</a></li>
+      <li><a data-toggle="tab" href="#DbContents">Database Contents</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <!-- First Window tab -->
+      <div id="FileManager" class="tab-pane fade in active">
+        <div class="row file-window">
+          <div class="col-sm-10">
+            <div class="input-group">
+                <label class="input-group-addon btn btn-primary btn-block"><i class="glyphicon glyphicon-th-list"></i> Browse
+                  <input id="files"
+                    style="display: none; color: white;"
+                    type="file"
+                    (change)="onFileSelectButtonClick($event)">
+                </label>
+                <input id="fileName" required type="text" class="form-control" [(ngModel)]="fileName"
+                       [ngModelOptions]="{standalone: true}">
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <button
+              type="button"
+              (click)="uploadFile()"
+              class="btn btn-primary pull-right">Upload
+            </button>
           </div>
         </div>
-        <div class="col-sm-2">
-          <button
-            type="button"
-            (click)="uploadFile()"
-            class="btn btn-primary">Upload
-          </button>
-        </div>
+
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <tr>
+            <th>File</th>
+            <th>Date</th>
+            <th>Size</th>
+          </tr>
+          <tr>
+            <td>Fatburger-consolidated-final.csv</td>
+            <td>6/12/2017</td>
+            <td>64kb</td>
+          </tr>
+          <tr>
+            <td>Fatburger-consolidated-final.csv</td>
+            <td>6/12/2017</td>
+            <td>64kb</td>
+          </tr>
+          <tr>
+            <td>Fatburger-consolidated-final.csv</td>
+            <td>6/12/2017</td>
+            <td>64kb</td>
+          </tr>
+          <tr>
+            <td>Fatburger-consolidated-final.csv</td>
+            <td>6/12/2017</td>
+            <td>64kb</td>
+          </tr>
+        </table>
       </div>
-    </div>
+    </div> <!-- First Window tab -->
 
-    <div class="table-responsive">
-      <table class="table table-hover">
-        <tr>
-          <th>File</th>
-          <th>Date</th>
-          <th>Size</th>
-        </tr>
-        <tr>
-          <td>Fatburger-consolidated-final.csv</td>
-          <td>6/12/2017</td>
-          <td>64kb</td>
-        </tr>
-        <tr>
-          <td>Fatburger-consolidated-final.csv</td>
-          <td>6/12/2017</td>
-          <td>64kb</td>
-        </tr>
-        <tr>
-          <td>Fatburger-consolidated-final.csv</td>
-          <td>6/12/2017</td>
-          <td>64kb</td>
-        </tr>
-        <tr>
-          <td>Fatburger-consolidated-final.csv</td>
-          <td>6/12/2017</td>
-          <td>64kb</td>
-        </tr>
-      </table>
-    </div>
+      <!-- Second Window tab -->
+      <div id="FileViewer" class="tab-pane fade">
+        <div class="jumbotron">
+          <h3>No File Selected</h3>
+          <p>Return to the File Manager tab to select a file.</p>
+        </div>
+      </div> <!-- Second Window tab -->
 
+      <!-- Third Window tab -->
+      <div id="DbContents" class="tab-pane fade">
+        <div class="jumbotron">
+          <h3>No File Selected</h3>
+          <p>Return to the File Manager tab to select a file.</p>
+        </div>
+      </div> <!-- Third Window tab -->
+    </div> <!-- tab-content -->
 
 </form>

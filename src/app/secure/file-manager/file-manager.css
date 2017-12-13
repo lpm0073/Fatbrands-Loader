@@ -34,3 +34,7 @@ th {
 .input-group-addon {
   color: #f1f1f1;
 }
+
+td {
+  font-weight: 400;
+}
